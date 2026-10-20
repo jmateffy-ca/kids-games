@@ -6,118 +6,22 @@
 <title>The Kids' Arcade</title>
 <meta name="description" content="Our homemade learning games, all in one place.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
-<!-- A link tree for the homemade kids' games. Static, no scripts beyond the
-     sprinkles, nothing loaded from anywhere else. To add a game: copy one
-     <a class="game"> block, draw it a logo, done. -->
+<!-- This address now just forwards to the real front door (2026-10-20). The
+     arcade moved into the Reading Quest app, where the kid picks who's playing
+     and types their PIN first. The PIN cookie is what tells every game whose
+     progress to save, and a cookie set there can't be read from this site, so
+     the front door can't live here. Kept as a redirect so old bookmarks and
+     the home-screen icon still work. -->
+<meta http-equiv="refresh" content="0; url=https://reading-quest-six.vercel.app/">
+<script>location.replace('https://reading-quest-six.vercel.app/');</script>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  :root { --ink:#3a2c4a; --font: ui-rounded,'SF Pro Rounded','Arial Rounded MT Bold','Chalkboard SE','Comic Sans MS',system-ui,sans-serif; }
-  body { min-height:100vh; font-family:var(--font); color:var(--ink); overflow-x:hidden;
-    background:linear-gradient(160deg,#ffe0ef 0%,#fff1d6 45%,#d9f5ff 100%); padding:28px 16px 48px; }
-  #sprinkles { position:fixed; inset:0; pointer-events:none; overflow:hidden; }
-  #sprinkles span { position:absolute; opacity:.2; animation:drift 12s ease-in-out infinite; }
-  @keyframes drift { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-24px) rotate(8deg)} }
-  main { position:relative; max-width:720px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:18px; }
-  h1 { font-size:clamp(40px,10vw,72px); line-height:1; text-align:center; color:#fff;
-    -webkit-text-stroke:3px #7a64e6; paint-order:stroke fill; text-shadow:0 6px 0 #7a64e6; }
-  h1 .wob { display:inline-block; animation:wob 2.4s ease-in-out infinite; }
-  @keyframes wob { 0%,100%{transform:rotate(-4deg)} 50%{transform:rotate(4deg) translateY(-4px)} }
-  .sub { font-size:19px; text-align:center; opacity:.8; }
-  .game { width:100%; display:flex; align-items:center; gap:16px; text-decoration:none; color:inherit;
-    background:#fff; border:4px solid var(--c); border-radius:28px; padding:14px 18px;
-    box-shadow:0 7px 0 var(--c), 0 14px 24px #0001; transition:transform .15s; }
-  .game:nth-of-type(odd) { transform:rotate(-1.2deg); } .game:nth-of-type(even) { transform:rotate(1deg); }
-  .game:hover, .game:focus-visible { transform:rotate(0) scale(1.03); outline:none; }
-  .game:active { transform:translateY(5px); box-shadow:0 2px 0 var(--c); }
-  .logo { flex:none; width:96px; height:96px; border-radius:24px; background:var(--bg); display:flex; align-items:center; justify-content:center; }
-  .logo svg { width:84px; height:84px; overflow:visible; }
-  .game:hover .logo svg { animation:bounce .5s; }
-  @keyframes bounce { 40%{transform:translateY(-10px) scale(1.06)} }
-  .game h2 { font-size:clamp(22px,5vw,30px); color:var(--c); line-height:1.1; }
-  .game p { font-size:16px; margin-top:4px; opacity:.8; }
-  .go { margin-left:auto; flex:none; font-size:30px; color:var(--c); }
-  .soon { width:100%; border:4px dashed #c9bdf2; border-radius:28px; padding:16px; text-align:center; font-size:17px; color:#8c7cc8; background:#ffffff88; }
-  @media (prefers-reduced-motion:reduce) { #sprinkles span, h1 .wob, .game:hover .logo svg { animation:none; } }
-  @media (max-width:420px) { .logo { width:76px; height:76px; } .logo svg { width:66px; height:66px; } .go { display:none; } }
+  body { min-height:100vh; display:flex; align-items:center; justify-content:center; margin:0;
+    font-family: ui-rounded,'SF Pro Rounded','Arial Rounded MT Bold',system-ui,sans-serif; color:#3a2c4a;
+    background:linear-gradient(160deg,#ffe0ef 0%,#fff1d6 45%,#d9f5ff 100%); text-align:center; padding:16px; }
+  a { color:#7a64e6; font-weight:800; font-size:22px; }
 </style>
 </head>
 <body>
-<div id="sprinkles" aria-hidden="true"></div>
-<main>
-  <h1><span class="wob">🎮</span> The Kids'<br>Arcade</h1>
-  <div class="sub">Pick a game and go!</div>
-
-  <a class="game" href="https://reading-quest-six.vercel.app/" style="--c:#2f9e8f;--bg:#dff7f0">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M50 30 C38 22 22 22 12 26 V80 C22 76 38 76 50 84 Z" fill="#fff" stroke="#2f9e8f" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M50 30 C62 22 78 22 88 26 V80 C78 76 62 76 50 84 Z" fill="#fff" stroke="#2f9e8f" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M20 40 h20 M20 50 h20 M20 60 h14 M60 40 h20 M60 50 h20" stroke="#bfe6dc" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="70" cy="64" r="14" fill="#ffd166" stroke="#e8a93a" stroke-width="3"/>
-        <path d="M70 53 L74 64 L70 75 L66 64 Z" fill="#ff6b6b"/>
-        <path d="M30 14 l3 6 6 1 -5 4 1 6 -5 -3 -5 3 1 -6 -5 -4 6 -1 Z" fill="#ffd166"/>
-      </svg>
-    </div>
-    <div><h2>Reading Quest</h2><p>Read a story, prove it, earn your stamp.</p></div>
-    <span class="go">▶</span>
-  </a>
-
-  <a class="game" href="https://reading-quest-six.vercel.app/word-builder" style="--c:#e8a93a;--bg:#fff1d0">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <ellipse cx="50" cy="56" rx="36" ry="34" fill="#7ed957" stroke="#4fa83a" stroke-width="4"/>
-        <circle cx="36" cy="40" r="10" fill="#fff"/><circle cx="64" cy="40" r="10" fill="#fff"/>
-        <circle cx="38" cy="42" r="5" fill="#3a2c4a"/><circle cx="62" cy="42" r="5" fill="#3a2c4a"/>
-        <path d="M28 60 Q50 90 72 60 Z" fill="#7a2f3e"/>
-        <path d="M34 61 l4 6 4 -6 M58 61 l4 6 4 -6" fill="#fff"/>
-        <path d="M30 20 l4 10 M50 16 v12 M70 20 l-4 10" stroke="#4fa83a" stroke-width="4" stroke-linecap="round"/>
-        <g font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900" font-size="16">
-          <rect x="74" y="58" width="22" height="22" rx="6" fill="#ffd166" stroke="#e8a93a" stroke-width="2" transform="rotate(12 85 69)"/>
-          <text x="79" y="75" fill="#6a3800" transform="rotate(12 85 69)">A</text>
-          <rect x="2" y="64" width="20" height="20" rx="6" fill="#ff9fc2" stroke="#e2678f" stroke-width="2" transform="rotate(-14 12 74)"/>
-          <text x="6" y="79" fill="#fff" transform="rotate(-14 12 74)">b</text>
-        </g>
-      </svg>
-    </div>
-    <div><h2>Munchy's Word Snacks</h2><p>Munchy is hungry for words. Build them and feed him!</p></div>
-    <span class="go">▶</span>
-  </a>
-
-  <a class="game" href="https://reading-quest-six.vercel.app/times-tables" style="--c:#e2678f;--bg:#ffe3ee">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <g stroke="#a65d24" stroke-width="2.5">
-          <rect x="14" y="44" width="20" height="13" rx="6.5" fill="#d98c4a" transform="rotate(-25 24 50)"/>
-          <rect x="62" y="44" width="20" height="13" rx="6.5" fill="#d98c4a" transform="rotate(25 72 50)"/>
-          <rect x="30" y="74" width="14" height="22" rx="7" fill="#d98c4a" transform="rotate(14 37 78)"/>
-          <rect x="54" y="74" width="14" height="22" rx="7" fill="#d98c4a" transform="rotate(-14 61 78)"/>
-          <ellipse cx="48" cy="62" rx="20" ry="20" fill="#d98c4a"/>
-          <circle cx="48" cy="26" r="19" fill="#d98c4a"/>
-        </g>
-        <circle cx="41" cy="24" r="3.2" fill="#3a2c4a"/><circle cx="55" cy="24" r="3.2" fill="#3a2c4a"/>
-        <path d="M40 33 q8 7 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <circle cx="48" cy="56" r="3.4" fill="#ff6b8b"/><circle cx="48" cy="68" r="3.4" fill="#8ee6c4"/>
-        <circle cx="80" cy="20" r="16" fill="#a08cff" stroke="#7a64e6" stroke-width="3"/>
-        <path d="M73 13 l14 14 M87 13 l-14 14" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div><h2>Times Table Town</h2><p>Outrun the fox, run the bake shop, sink some hoops.</p></div>
-    <span class="go">▶</span>
-  </a>
-
-  <div class="soon">✨ Next game coming soon…</div>
-</main>
-<script>
-  // Background sprinkles only — this page has no other script.
-  (function () {
-    var art = ['⭐','📚','🍪','🧁','🏀','✖️','🔤','🍓'], box = document.getElementById('sprinkles');
-    for (var i = 0; i < 12; i++) {
-      var s = document.createElement('span'); s.textContent = art[i % art.length];
-      s.style.left = Math.floor(Math.random() * 92) + '%'; s.style.top = Math.floor(Math.random() * 90) + '%';
-      s.style.fontSize = (34 + Math.floor(Math.random() * 46)) + 'px'; s.style.animationDelay = (-Math.random() * 12) + 's';
-      box.appendChild(s);
-    }
-  })();
-</script>
+  <p>🎮 The Kids' Arcade moved!<br><br><a href="https://reading-quest-six.vercel.app/">Tap here to play</a></p>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 Live: https://jmateffy-ca.github.io/kids-games/
 
-A link tree for the homemade learning games. One static `index.html`; to add a game, copy an
-`<a class="game">` card and draw it an inline-SVG logo. The games themselves live in
-`jmateffy-ca/reading-quest` under `public/` — see `GAMES.md` there for how to build one.
+Since 2026-10-20 this is only a redirect to the real front door,
+https://reading-quest-six.vercel.app/, where a kid picks who's playing and types their PIN.
+It stays so old bookmarks keep working. Games are added in `jmateffy-ca/reading-quest`, not
+here — see `GAMES.md` there.
