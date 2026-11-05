@@ -1,4 +1,4 @@
-# The Kids' Arcade
+# The Kids Dojo
 
 Live: https://jmateffy-ca.github.io/kids-games/
 
